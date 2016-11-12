@@ -4,19 +4,224 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-		.person_website{
-
+		*{
+			margin:0;
+			padding: 0;
+			list-style: none;
 		}
-		.fish{
+		body,html{
+			background: #000;
+			width:100%;height:100%;
+			
+		}
+		body {
+			text-align:center;
+		}
+		h2{
+			font-size:40px;
+			line-height:50px;
+			color:red;
+			font-family:bold;
+			margin-top:50px;
+			text-align:center;
+		}
+		h3{
+			display: block;
+			position:absolute;
+			left:70%;
+			top:0;
+			font-size:20px;
+			line-height:50px;
+			color:red;
+			font-family:italic;
+			margin-top:50px;
+			text-align:center;
+		}
+		/*.back{
+			background:url("img5/dream2.jpg") no-repeat  center center;
+
+			width: 100%;
+			height:100%
+		}*/
+		.person_website{
+			width:100%;height:100%;
+		}
+		/*.fish{
 			margin:20px auto;
 			width:200px;height:200px;background: red; font-size:50px; color:#fff;text-align: center;
+		}*/
+		.product{
+			position: relative;
+
+			margin:60px auto;
 		}
+		.product ul{ width:200px; height:200px; background:#ccc; position:relative; float:left; margin:20px; overflow:hidden; }
+		.product li{ position:absolute; left:0px; top:200px; width:100%; height:100%; background:red;
+			filter:alpha(opacity:30);opacity:.3 ;
+		}
+		.product ul.fish{
+			background: url('fish/img/game_bg_2_hd.jpg') no-repeat;
+			background-size:cover;
+			display:block;
+		}
+		.product ul.huan{
+			background: url('huan/img2/3.jpg') no-repeat;
+			background-size:cover;
+			display:block;
+		}
+		.product ul.square{
+			background: url('squ/squ.jpg') no-repeat;
+			background-size:cover;
+			display:block;
+		}
+		.product ul.bao{
+
+			text-align:center;line-height:200px;color:purple;font-size:30px;
+			display:block;
+		}
+		.product ul.time{
+			text-align:center;line-height:200px;color:purple;font-size:30px;
+			display:block;
+		}
+		.person_website #person{
+			background:url("img5/me.jpg") center no-repeat;
+			width: 120px;
+			height: 120px;
+			background-size:100%;
+			position:absolute;
+			right:5%;
+			top:20%;
+			margin-top:-105px;
+			margin-left:-105px;
+			border-radius:50%;
+		}
+		@-webkit-keyframes move {
+			to{
+				transform:rotate(360deg);
+			}
+		}
+		.person_website #person:hover{
+			animation:2s move linear infinite;
+		}
+
 	</style>
+	<script src="wall/move.js"></script>
+	<script>
+		function getDir(obj,ev){
+			var x=obj.offsetLeft+obj.offsetWidth/2-ev.clientX;
+			var y=obj.offsetTop+obj.offsetHeight/2-ev.clientY;
+
+			return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+		}
+		function through(obj){
+			var oS=obj.children[0];
+
+			obj.onmouseenter=function (ev){
+				var oEvent=ev||event;
+				//0 1 2 3
+				var dir=getDir(this,oEvent);
+
+				switch(dir){
+					case 0:
+						oS.style.left=200+'px';
+						oS.style.top=0+'px';
+						break;
+					case 1:
+						oS.style.left=0+'px';
+						oS.style.top=200+'px';
+						break;
+					case 2:
+						oS.style.left=-200+'px';
+						oS.style.top=0+'px';
+						break;
+					case 3:
+						oS.style.left=0+'px';
+						oS.style.top=-200+'px';
+						break;
+				}
+				move(oS,{left:0,top:0});
+			};
+			obj.onmouseleave=function (ev){
+				var oEvent=ev||event;
+				//0 1 2 3
+				var dir=getDir(this,oEvent);
+
+				switch(dir){
+					case 0:
+						move(oS,{left:200,top:0});
+						break;
+					case 1:
+						move(oS,{left:0,top:200});
+						break;
+					case 2:
+						move(oS,{left:-200,top:0});
+						break;
+					case 3:
+						move(oS,{left:0,top:-200});
+						break;
+				}
+			};
+		}
+		window.onload=function (){
+			var aUl=document.getElementsByTagName('ul');
+
+			for(var i=0; i<aUl.length; i++){
+				through(aUl[i]);
+			}
+		};
+
+	</script>
 </head>
 <body>
-	<div class="person_website">
 
-		<div class="fish"><a href="fish/捕鱼达人">fish</a></div>
+	<div class="person_website">
+		<span id="person"></span>
+		<h2>个人作品展示</h2>
+		<h3>作者：吴国生</h3>
+		<div class="product">
+			<a href="fish/捕鱼达人.html">
+				<ul class="fish">
+					<li></li>
+				</ul>
+			</a>
+
+			<a href="huan/图片环.html">
+				<ul class="huan">
+					<li></li>
+				</ul>
+			</a>
+			<a href="square/index.html">
+				<ul class="square">
+					<li></li>
+				</ul>
+			</a>
+			<a href="baozha/爆炸.html">
+				<ul class="bao">爆炸
+					<li></li>
+				</ul>
+			</a>
+			<a href="time/弧版时钟.html">
+				<ul class="time">弧版时钟
+					<li></li>
+				</ul>
+			</a>
+			<ul>
+				<li></li>
+			</ul>
+			<ul>
+				<li></li>
+			</ul>
+			<ul>
+				<li></li>
+			</ul>
+			<ul>
+				<li></li>
+			</ul>
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+		<!--<div class="fish"><a href="fish/捕鱼达人">fish</a></div>-->
 	</div>
 </body>
 </html>

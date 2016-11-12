@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded',function(){
             }
             //炮弹性能优化
             for(var i = 0;i<arrBullet.length;i++){
-                if(arrBullet[i].x<out||arrBullet[i].x>oC.width+out||arrBullet[i].y<out||arrBullet[i].y>oC.height+out){
+                if(arrBullet[i].x<0||arrBullet[i].x>oC.width+out||arrBullet[i].y<0||arrBullet[i].y>oC.height+out){
                     arrBullet.splice(i,1);
                     i--;
                 }
