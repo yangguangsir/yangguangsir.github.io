@@ -1,0 +1,36 @@
+html,body{font-size:50px;}
+footer{width:100%;height:28.34rem;}
+.hd{width:100%;height:6rem;background:url(../img/2.jpg) no-repeat center center;background-size:100% 100%;font-size:1.28rem;line-height:6rem;color:#fff;}
+#nav{padding-top:1.675rem; width:100%;height:5.84rem;background:#fafafa;display:-webkit-box;}
+#nav li{-webkit-box-flex:1;height:5.84rem;text-align:center;}
+#nav li p{height:0.72rem;line-height:0.72rem;font-size:0.48rem;text-align:center;}
+#nav .cur{color:red;}
+.active .intr-svg .st0 {
+    fill:red
+}
+.intr-svg {
+    width: 3rem;
+    height: 2rem;
+}
+
+.swiper-container {
+    width: 100%;
+}
+.swiper-slide {
+
+    color:#fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+.parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide .title {height:3.2rem;width:100%;line-height:3.2rem;color:#e40f23;font-size:0.9rem;}
+.swiper-slide .title span{height:0.78rem;border-left:#e40f23 solid 0.16rem;display:inline-block;margin-left:1.08rem;margin-top:1.2rem;margin-right:0.68rem;}
+.swiper-slide .subtitle {width:11.92rem;height:5.4rem;background:url(../img/3.jpg) no-repeat center center;background-size:11.92rem 5.4rem;margin-left:2rem;margin-right:1.1rem;}
+.swiper-slide .text {padding-left:2rem;padding-right:1rem;font-size:.54rem;line-height:1rem;color:#474747;max-width:15rem;}
