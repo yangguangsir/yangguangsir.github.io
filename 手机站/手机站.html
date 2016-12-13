@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link href="css.css" rel="stylesheet" type="text/css" />
+    <script src="sea.js" data-main="init.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        html {
+            font-size: 20px;
+        }
+
+        #wrap {
+            margin:0 auto;
+            width:16rem;
+        }
+        #wrap header{
+            width:16rem;
+            height: 3rem;
+            background: #344a61;
+        }
+        header menu{
+            width:3rem;
+            height: 3rem;
+            background:url("img/menu.png") no-repeat center center;
+            background-size:0.7rem 0.5rem;
+            text-indent: -99999px;
+            float: left;
+            border-right:1px solid #455b72;
+
+        }
+        header .logo{
+            float: left;
+            width: calc(100% - 6rem - 2px);
+            text-align: center;
+            line-height:3rem;
+            height: 3rem;
+            color: #fff;
+        }
+        header h3{
+            width:3rem;
+            height: 3rem;
+            float: left;
+            border-left:1px solid #455b72;
+            text-indent: -9999px;
+        }
+        header h3 a{
+            display: block;
+            width: 0.9rem;
+            height:0.6rem;
+            margin-left:1.05rem;
+            margin-top:1.225rem;
+            background:url("img/mail.png") no-repeat center center;
+
+        }
+
+
+    </style>
+    <script>
+        (function(win,doc){
+            function change(){
+                doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+            }
+            change();
+            win.addEventListener('resize',change,false);
+        })(window,document);
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <menu>菜单</menu>
+        <div class="logo">hello world</div>
+        <h3>
+            <a href="JavaScript:;">信封</a>
+        </h3>
+    </header>
+    <section>
+        <div class="play" id="play">
+            <ol>
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ol>
+            <ul>
+                <li><a href="https://www.meili.com/"><img src="images/1.jpg" alt="广告一" /></a></li>
+                <li><a href="https://www.jd.com/"><img src="images/2.jpg" alt="广告二" /></a></li>
+                <li><a href="https://www.tmall.com/"><img src="images/3.jpg" alt="广告三" /></a></li>
+                <li><a href="https://www.tmall.com/"><img src="images/4.jpg" alt="广告四" /></a></li>
+                <li><a href="https://www.tmall.com/"><img src="images/5.jpg" alt="广告五" /></a></li>
+            </ul>
+        </div>
+    </section>
+</div>
+</body>
+</html>

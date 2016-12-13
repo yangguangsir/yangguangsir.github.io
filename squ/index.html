@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .demo{position:absolute;
+            left:50%;top:50%;
+            margin:-200px;
+            perspective:500px
+
+        }
+        .box{position:relative;
+            width:300px;height:300px;
+
+        }
+        .c{width:300px;height:300px;
+            border:2px solid #000;
+            text-align:center;
+            line-height:300px;
+            font-size:40px;
+            position:absolute;
+            left:0;top:0;
+        }
+        .top   {animation:top    2s 2s  linear both;}
+        .bottom{animation:bottom 2s 4s  linear both;}
+        .left  {animation:left   2s 6s  linear both;}
+        .right {animation:right  2s 8s  linear both;}
+        .back  {animation:back   2s 10s linear both;}
+        .front {animation:front  2s 12s linear both;}
+        .box   {transform-style:preserve-3d;  animation:box  5s 14s linear infinite both;}
+
+        @keyframes top   { 100% {transform:rotateX(90deg)   translateZ(150px);}     }
+        @keyframes bottom{ 100% {transform:rotateX(-90deg)  translateZ(150px);}     }
+        @keyframes left  { 100% {transform:rotateY(-90deg)  translateZ(150px);}     }
+        @keyframes right { 100% {transform:rotateY(90deg)   translateZ(150px);}     }
+        @keyframes back  { 100% {transform:rotateY(180deg)  translateZ(150px);}     }
+        @keyframes front { 100% {transform:                 translateZ(150px);}     }
+        @keyframes box   { 100% {transform:rotate3d(1,1,1,360deg);    }		}
+
+        .box:hover .top   {background-color:rgba(255,255,0,0.8) ;}
+        .box:hover .bottom{background-color:rgba(0,255,0,0.8)   ;}
+        .box:hover .left  {background-color:rgba(0,255,255,0.8) ;}
+        .box:hover .right {background-color:rgba(0,0,255,0.8)   ;}
+        .box:hover .back  {background-color:rgba(255,0,255,0.8) ;}
+        .box:hover .front {background-color:rgba(255,0,0,0.8)   ;}
+        .box:hover .c     {border-color:rgba(0,0,0,0.8);color:#fff;
+            transition: color 1s linear;}
+    </style>
+</head>
+<body>
+<div class="demo">
+    <div class="box">
+        <div class="top c">top</div>
+        <div class="bottom c">bottom</div>
+        <div class="front c">front</div>
+        <div class="back c">back</div>
+        <div class="left c">left</div>
+        <div class="right c">right</div>
+    </div>
+</div>
+</body>
+</html>

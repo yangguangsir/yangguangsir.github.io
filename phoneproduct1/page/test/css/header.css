@@ -1,0 +1,25 @@
+header{
+    width: 100%;
+    height: 1.76rem;
+    color: #f6fafb;
+    font-size: 0.64rem;
+    background: #040404;
+    overflow: hidden;
+
+}
+header menu{
+    float: left;
+    margin-top: 0.56rem;
+    margin-left: 1.08rem;
+    width: 0.9rem;
+    height: 0.64rem;
+    background: url(../img/menu_a.png) no-repeat center center;
+    background-size:100% 100%;
+}
+header h1{
+    float: left;
+    padding-left: 4.08rem;
+    margin-top: 0.5rem;
+    width: calc(100% - 1.08rem - 1.08rem - 4.08rem);
+    font-size: 0.64rem;
+}

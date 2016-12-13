@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Demo styles -->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+        list-style: none;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .swiper-wrapper #back1{
+        position: relative;
+        left:0;top:0;
+
+        width: 100%;
+        height: 100%;
+        background:url('img/1.jpg') no-repeat;
+
+    }
+    .swiper-wrapper #back2{
+        position: relative;
+        left:0;top:0;
+
+        width: 100%;
+        height: 100%;
+        background:url('img/3.jpg') no-repeat;
+
+    }
+
+    .swiper-wrapper #back1 .personphoto{
+        width:200px;
+        height:200px;
+        border-radius:50%;
+
+        background:url('img/me.jpg') no-repeat center center;
+        position: fixed;
+        left:73%;top:30%;
+        margin-top:-100px;
+        margin-left:-100px;
+
+    }
+
+    @-webkit-keyframes move {
+        to{
+            transform:rotate(360deg);
+        }
+    }
+    .swiper-wrapper #back1 .personphoto:hover{
+        animation:2s move linear infinite;
+    }
+    .swiper-wrapper #back1 p{
+        position:absolute;
+        right:10%;bottom:20%;
+        font-size:30px;
+        color:orange;
+    }
+    .swiper-wrapper #back1 h2{
+        position:absolute;
+        right:20%;bottom:35%;
+        font-size:30px;
+        color:orange;
+    }
+
+    .swiper-wrapper #back2 ul{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin:-150px 0 0 -150px;
+    }
+    .swiper-wrapper #back2 ul li{
+        list-style: none;
+        width:300px;
+        height:300px;
+        position: absolute;
+        left:0;
+        top: 0;
+        background: #399;
+        font-size:50px;
+        color: #fff;
+        line-height: 300px;
+        text-align: center;
+        border: 1px solid #000;
+        transition:0.4s all ease;
+        transform:perspective(800px) translateX(0px) rotateY(0deg);
+    }
+    .swiper-wrapper #back2 ul li.cen{
+        z-index: 5;
+    }
+    .swiper-wrapper #back2 ul li.l1{
+        transform:perspective(800px) translateX(-200px) rotateY(60deg);
+        opacity:0.8;
+        z-index:3;
+    }
+    .swiper-wrapper #back2 ul li.l2{
+        transform:perspective(800px) translateX(-300px) rotateY(20deg);
+        opacity:0.3;
+        z-index:1;
+    }
+
+    .swiper-wrapper #back2 ul li.r1{
+        transform:perspective(800px) translateX(200px) rotateY(-60deg);
+        opacity:0.8;
+        z-index:3;
+    }
+    
+    .swiper-wrapper #back2 ul li img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .swiper-wrapper #back2 ul li.r2{
+        transform:perspective(800px) translateX(300px) rotateY(-20deg);
+        opacity:0.3;
+        z-index:1;
+    }
+    .swiper-wrapper #back2 #btn1{
+        position:absolute;
+        left:50px;top:50%;
+        width:100px;
+        height: 50px;
+        font-size:30px;
+    }
+    .swiper-wrapper #back2 #btn2{
+        position:absolute;
+        right:50px;top:50%;
+        width:100px;
+        height: 50px;
+        font-size:30px;
+    }
+    .swiper-wrapper #back2 #peng{
+        width:150px;
+        height:150px;
+        background:url('img/smile1.jpg') no-repeat center;
+        position:absolute;
+        left:0; top:0;
+        border-radius:50%;
+        z-index:10;
+    }
+
+
+
+    .swiper-wrapper #back3{
+        position: relative;
+        left:0;top:0;
+
+        width: 100%;
+        height: 100%;
+
+
+    }
+    .swiper-wrapper #back3 h2{
+        font-size:40px;
+        line-height:50px;
+        color:red;
+        font-family:bold;
+        margin-top:50px;
+        text-align:center;
+    }
+    .swiper-wrapper #back3 {
+         width:100%;height:100%;
+     }
+    .swiper-wrapper #back3 h3{
+        display: block;
+        position:absolute;
+        left:70%;
+        top:0;
+        font-size:20px;
+        line-height:50px;
+        color:red;
+        font-family:italic;
+        margin-top:50px;
+        text-align:center;
+    }
+
+
+    .swiper-wrapper #back3 {
+        width:100%;height:100%;
+        background: #000;
+
+    }
+    .swiper-wrapper #back3 .product{
+        position: relative;
+
+       margin-top:100px;
+    }
+    .swiper-wrapper #back3 .product ul{ width:180px; height:180px; background:#ccc; position:relative; float:left; margin:20px; overflow:hidden; }
+    .swiper-wrapper #back3 .product li{ position:absolute; left:0px; top:200px; width:100%; height:100%; background:red;
+        filter:alpha(opacity:30);opacity:.3 ;
+    }
+    .swiper-wrapper #back3 .product ul.fish{
+        background: url('fish/img/game_bg_2_hd.jpg') no-repeat;
+        background-size:cover;
+        display:block;
+    }
+    .swiper-wrapper #back3 .product ul.huan{
+        background: url('huan/img2/3.jpg') no-repeat;
+        background-size:cover;
+        display:block;
+    }
+    .swiper-wrapper #back3 .product ul.square{
+        background: url('squ/squ.jpg') no-repeat;
+        background-size:cover;
+        display:block;
+    }
+    .swiper-wrapper #back3 .product ul.bao{
+
+        text-align:center;line-height:200px;color:purple;font-size:30px;
+        display:block;
+    }
+    .swiper-wrapper #back3 .product ul.plane{
+
+        text-align:center;line-height:200px;color:purple;font-size:30px;
+        display:block;
+    }
+    .swiper-wrapper #back3 .product ul.phone1{
+
+        text-align:center;line-height:200px;color:purple;font-size:30px;
+        display:block;
+    }
+    .swiper-wrapper #back3 .product ul.time{
+        text-align:center;line-height:200px;color:purple;font-size:30px;
+        display:block;
+    }
+    .swiper-wrapper #back4{
+        position: relative;
+        left:0;top:0;
+        width: 100%;
+        height: 100%;
+        background:url('img/sport3.jpg') no-repeat;
+    }
+    .swiper-wrapper #back4 #div3 {
+        width: 300px;
+        height: 150px;
+        line-height:30px;
+        padding:30px;
+        border-radius:40%;
+        background: #fff;
+       position:absolute;
+        left:50%;margin-left:-150px;
+        top:20px;
+    }
+    .swiper-wrapper #back4 ul li{
+        width: 200px;
+        height: 200px;
+        line-height:200px;
+        color:blueviolet;
+        font-size:80px;
+        border-radius:50%;
+        background:#ccc;
+        display:none;
+    }
+    .swiper-wrapper #back4 #back_div1 {
+       position:absolute;
+        left:10px;
+        top:10px;
+
+        background-position: center center;
+
+    }
+    .swiper-wrapper #back4 #back_div2 {
+
+       position:absolute;
+        left:10px;
+        top:230px;
+    }
+    .swiper-wrapper #back4 #back_div3 {
+
+       position:absolute;
+        left:10px;
+        top:460px;
+    }
+    .swiper-wrapper #back4 #back_div4 {
+
+       position:absolute;
+        left:230px;
+        top:460px;
+    }
+    .swiper-wrapper #back4 #back_div5 {
+
+       position:absolute;
+        left:460px;
+        top:460px;
+    }
+    .swiper-wrapper #back4 #back_div6 {
+
+
+       position:absolute;
+        left:460px;
+        top:230px;
+    }
+    .swiper-wrapper #back4 #back_div7 {
+
+       position:absolute;
+        left:460px;
+        top:10px;
+    }
+    .swiper-wrapper #back4 #back_div8 {
+
+       position:absolute;
+        left:230px;
+        top:10px;
+    }
+    .swiper-wrapper #back4 #back_div9 {
+
+       position:absolute;
+        left:230px;
+        top:230px;
+    }
+    .swiper-wrapper #back4 #btn4{
+        font-size:30px;
+        background: red;
+        color:#fff;
+        text-align:center;
+        width:200px;height:50px;
+        position: absolute;
+        left:50%;top:50%;
+        line-height:50px;
+        margin-left:-50px;
+        margin-top:-25px;
+    }
+    .swiper-wrapper #back5{
+        position: relative;
+        left:0;top:0;
+        width: 100%;
+        height: 100%;
+        /*background:url('img/sport4.jpg') no-repeat;*/
+        
+    }
+    /*.swiper-wrapper #back5 #container{
+        width:100%;
+        height: 100%;
+    }*/
+    </style>
+
+    <script>
+        function getDir(obj,ev){
+            var x=obj.offsetLeft+obj.offsetWidth/2-ev.clientX;
+            var y=obj.offsetTop+obj.offsetHeight/2-ev.clientY;
+
+            return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+        }
+        function through(obj){
+            var oS=obj.children[0];
+
+            obj.onmouseenter=function (ev){
+                var oEvent=ev||event;
+                //0 1 2 3
+                var dir=getDir(this,oEvent);
+
+                switch(dir){
+                    case 0:
+                        oS.style.left=200+'px';
+                        oS.style.top=0+'px';
+                        break;
+                    case 1:
+                        oS.style.left=0+'px';
+                        oS.style.top=200+'px';
+                        break;
+                    case 2:
+                        oS.style.left=-200+'px';
+                        oS.style.top=0+'px';
+                        break;
+                    case 3:
+                        oS.style.left=0+'px';
+                        oS.style.top=-200+'px';
+                        break;
+                }
+                move(oS,{left:0,top:0});
+            };
+            obj.onmouseleave=function (ev){
+                var oEvent=ev||event;
+                //0 1 2 3
+                var dir=getDir(this,oEvent);
+
+                switch(dir){
+                    case 0:
+                        move(oS,{left:200,top:0});
+                        break;
+                    case 1:
+                        move(oS,{left:0,top:200});
+                        break;
+                    case 2:
+                        move(oS,{left:-200,top:0});
+                        break;
+                    case 3:
+                        move(oS,{left:0,top:-200});
+                        break;
+                }
+            };
+        }
+
+        window.onload = function () {
+            var oBox = document.getElementById('peng');
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oDiv3 = document.getElementById('div3');
+            var oUl = document.getElementById('ul1');
+            var aLi =oUl.children;
+
+            var aUl=document.querySelectorAll('#back3 ul');
+            var oH1=document.querySelector('#back1 h2');
+            var oInp1=document.querySelector('#back4 #btn4');
+            var oInp2=document.querySelector('#back4 #btn5');
+            var aBack4Li=document.querySelectorAll('#back4 ul li');
+            /*//名字嘚瑟
+            oH1.onmousedown=function(){
+                oH1.style.fontSize='50px';
+                oH1.addClass.add('rubberBand');
+            };*/
+            for(var i=0; i<aUl.length; i++){
+                through(aUl[i]);
+            }
+            var aClass = [];
+            //当前时间
+            var oDate=new Date();
+            var week=oDate.getDay();
+
+            //第二页翻转
+            for(var i = 0;i<aLi.length;i++){
+                aClass.push(aLi[i].className);
+               /* aLi[oDate.getDay()-1].style.zIndex=100;*/
+
+            }
+            //console.log(aClass);
+            oBtn1.onclick = function () {
+                aClass.push(aClass.shift());
+                for(var i = 0;i<aLi.length;i++){
+                    aLi[i].className = aClass[i];
+                }
+                //console.log(aClass);
+            };
+            oBtn2.onclick = function () {
+                aClass.unshift(aClass.pop());
+                for(var i = 0;i<aLi.length;i++){
+                    aLi[i].className = aClass[i];
+                }
+                //console.log(aClass);
+            };
+            //碰撞球
+            (function(oBox){
+                var iSpeedX = 8;
+                var iSpeedY = 6;
+                setInterval(function(){
+                    var l = oBox.offsetLeft+iSpeedX;
+                    var t = oBox.offsetTop+iSpeedY;
+                    if(t<0){
+                        t = 0;
+                        iSpeedY*=-1;
+                    }
+                    if(t>=document.documentElement.clientHeight-oBox.offsetHeight){
+                        t = document.documentElement.clientHeight-oBox.offsetHeight;
+                        iSpeedY*=-1;
+                    }
+                    if(l<0){
+                        l = 0;
+                        iSpeedX*=-1;
+                    }
+                    if(l>=document.documentElement.clientWidth-oBox.offsetWidth){
+                        l = document.documentElement.clientWidth-oBox.offsetWidth;
+                        iSpeedX*=-1;
+                    }
+                    oBox.style.left = l +'px';
+                    oBox.style.top = t +'px';
+                },30);
+            })(oBox);
+            //第四页分布运动
+            oInp1.onclick=function(){
+                var str='健康是幸福的主要因素，每天锻炼一小时，健康工作五十年，幸福生活一辈子.';
+                oInp1.style.display='none';
+                for(var i=0;i<str.length;i++){
+                    var oSpan=document.createElement('span');
+                    oSpan.innerHTML=str.charAt(i);
+                    oSpan.style.opacity=0;
+                    oSpan.style.fontSize='30px';
+                    oSpan.style.fontColor='blue';
+                    oSpan.style.textIndent='2em';
+
+                    oDiv3.appendChild(oSpan);
+                }
+                var aSpan=document.getElementsByTagName('span');
+                var n=0;
+                for(var i=0;i<aSpan.length;i++){
+                    (function(index){
+                        setTimeout(function(){
+                            n++;
+                            //aDiv[index].style.display='block';
+                            move(aSpan[index],{'opacity':1},{'duration':200});
+
+                            //九个圆
+                            if(n==38){
+                                oDiv3.style.display='none';
+                                for(var j=0;j<aBack4Li.length;j++){
+                                    var n2=0;
+                                    (function(index){
+                                        setTimeout(function(){
+                                            n2++;
+                                            //aDiv[index].style.display='block';
+                                            move(aBack4Li[index],{'opacity':1},{'duration':1000});
+                                            aBack4Li[index].style.display='block';
+
+                                            aBack4Li[index].onclick=function(){
+                                                aBack4Li[index].style.display='none';
+                                            };
+                                        },500*index);
+                                    })(j);
+                                }
+                            }
+                        },150*index);
+                    })(i);
+                }
+            };
+
+            //分页效果
+
+
+
+
+
+
+        };
+    </script>
+    <script src="css/move.js"></script>
+    <script src="css/class.js"></script>
+    <script src="wall/move.js"></script>
+    <link href="css/m_menu.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="back1">
+
+                <div class="personphoto"></div>
+                <h2 class="animated rubberBand">作者：吴国生</h2>
+                <p>Welcome to my personpage</p>
+            </div>
+            <div class="swiper-slide" id="back2">
+                <div id="peng"></div>
+                <input type="button" value="上一个" id="btn1">
+                <input type="button" value="下一个" id="btn2">
+                <ul id="ul1">
+                    <li class="l2 animated"><img src="img/week1.jpg" alt=""/></li>
+                    <li class="l1 swing"><img src="img/week2.jpg" alt=""/></li>
+                    <li class="cen tada"><img src="img/week3.jpg" alt=""/></li>
+                    <li class="r1 wobble"><img src="img/week4.jpg" alt=""/></li>
+                    <li class="r2 jello"><img src="img/week5.jpg" alt=""/></li>
+                    <li class="bounceIn"><img src="img/week6.jpg" alt=""/></li>
+                    <li class="bounceInUp"><img src="img/week7.jpg" alt=""/></li>
+                </ul>
+            </div>
+            <div class="swiper-slide person_website" id="back3">
+                <span id="person"></span>
+                <h2>个人作品展示</h2>
+                <div class="product">
+                    <a href="fish/捕鱼达人.html">
+                        <ul class="fish">
+                            <li></li>
+                        </ul>
+                    </a>
+
+                    <a href="huan/图片环.html">
+                        <ul class="huan">
+                            <li></li>
+                        </ul>
+                    </a>
+                    <a href="squ/index.html">
+                        <ul class="square">
+                            <li></li>
+                        </ul>
+                    </a>
+                    <a href="baozha/爆炸.html">
+                        <ul class="bao">爆炸
+                            <li></li>
+                        </ul>
+                    </a>
+                    <a href="time/弧版时钟.html">
+                        <ul class="time">弧版时钟
+                            <li></li>
+                        </ul>
+                    </a>
+                    <a href="plane/plane.html">
+                        <ul class="plane">打飞机
+                            <li></li>
+                        </ul>
+                    </a>
+                    <a href="phoneproduct1/index.html">
+                        <ul class="phone1">手机端项目
+                            <li></li>
+                        </ul>
+                    </a>
+                    <ul >
+                        <li></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="swiper-slide" id="back4">
+                <input type="button" value="点我吧" id="btn4"/>
+                
+                <div id="div3"></div>
+                <ul>
+                    <li id="back_div1" class="animated shake">快</li>
+                    <li id="back_div2" class="animated pulse">来</li>
+                    <li id="back_div3" class="animated swing">一</li>
+                    <li id="back_div4" class="animated tada">起</li>
+                    <li id="back_div5" class="animated wobble">做</li>
+                    <li id="back_div6" class="animated jello">运</li>
+                    <li id="back_div7" class="animated rubberBand">动</li>
+                    <li id="back_div8" class="animated fadeIn">吧</li>
+                    <li id="back_div9" class="animated flip">！</li>
+                </ul>
+
+            </div>
+            <div class="swiper-slide" id="back5">
+                <iframe border="0" id="content" src="http://demo.daimabiji.com/383" frameborder="0" height="100%" width="100%"></iframe>
+            </div>
+            <div class="swiper-slide" id="back6">
+                <iframe border="0" id="content" src="http://demo.daimabiji.com/383" frameborder="0" height="100%" width="100%"></iframe>
+            </div>
+            <div class="swiper-slide">Slide 7</div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: true
+    });
+    </script>
+</body>
+</html>
